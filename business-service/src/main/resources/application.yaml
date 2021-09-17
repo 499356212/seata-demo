@@ -1,0 +1,21 @@
+server:
+  port: 8104
+
+spring:
+  application:
+    name: business-service
+
+dubbo:
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 10004
+  application:
+    id: ${spring.application.name}
+    name: ${spring.application.name}
+  registry:
+    id: ${spring.application.name}-registry
+    address: zookeeper://127.0.0.1:2181
+    check: false
+  consumer:
+    check: false
